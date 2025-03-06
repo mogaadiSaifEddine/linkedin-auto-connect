@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LinkedIn Auto Connect</title>
+        <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      width: 300px;
+      padding: 10px;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    h1 {
+      font-size: 18px;
+      color: #0A66C2;
+      margin-bottom: 10px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    label {
+      font-size: 14px;
+      font-weight: 500;
+    }
+    input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #0A66C2;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      margin-top: 5px;
+    }
+    button:hover {
+      background-color: #084482;
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .status {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .running {
+      background-color: #e6f7ff;
+      color: #0A66C2;
+    }
+    .success {
+      background-color: #f6ffed;
+      color: #52c41a;
+    }
+    .error {
+      background-color: #fff2f0;
+      color: #ff4d4f;
+    }
+  </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>LinkedIn Auto Connect</h1>
+
+            <div class="form-group">
+                <label for="maxConnects">Maximum Connections:</label>
+                <input type="number" id="maxConnects" min="1" max="100"
+                    value="50">
+            </div>
+
+            <div class="form-group">
+                <label for="connectDelay">Delay Between Connections
+                    (ms):</label>
+                <input type="number" id="connectDelay" min="1000" max="10000"
+                    value="3000">
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="sendWithoutNote" checked>
+                    Send Without Note
+                </label>
+            </div>
+
+            <button id="startButton">Start Auto Connect</button>
+            <button id="stopButton" disabled>Stop</button>
+
+            <div id="status" class="status" style="display: none;"></div>
+        </div>
+
+        <script src="popup.js"></script>
+    </body>
+</html>

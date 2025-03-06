@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Auto Connect",
+  "version": "1.0",
+  "description": "Automatically connect with people on LinkedIn",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.linkedin.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": ["*://*.linkedin.com/*"]
+}
